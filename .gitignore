@@ -1,8 +1,7 @@
 # Since this is a git repository placed in the /home/user directory, I've escluded
 # everything but the desidered files: 
+
 /*
-
-
 !/.gitignore 
 
 ## .config directory 
@@ -12,11 +11,10 @@
 /.config/**
 
 ## dirs...
-#!/.config/sway/
-# /.config/sway/**
+!/.config/sway/
+!/.config/sway/**
 
 
 ## stand-alone files
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
-!/.config/deleteme
