@@ -1,7 +1,11 @@
 # Since this is a git repository placed in the /home/user directory, I've escluded
 # everything but the desidered files: 
-
-*
+/*
 
 !.gitignore 
-!.congig/ 
+
+!.config/*
+#.config/*
+#!.config/sway
+#!.config/user-dirs.dirs
+#!.config/user-dirs.locale
