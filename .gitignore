@@ -4,8 +4,4 @@
 
 !.gitignore 
 
-!.config/*
-#.config/*
-#!.config/sway
-#!.config/user-dirs.dirs
-#!.config/user-dirs.locale
+!./.config/**
