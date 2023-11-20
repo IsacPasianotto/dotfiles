@@ -2,6 +2,8 @@
 # everything but the desidered files: 
 /*
 
-!.gitignore 
-
-!./.config/**
+!/.gitignore 
+!/.config/
+/.config/**
+!/.config/sway/
+!/.config/user-dirs.dirs
