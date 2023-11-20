@@ -13,7 +13,8 @@
 ## dirs...
 !/.config/sway/
 !/.config/sway/**
-
+!/.config/waybar/
+!/.config/waybar/**
 
 ## stand-alone files
 !/.config/user-dirs.dirs
