@@ -9,7 +9,7 @@
 ##
 
 !/.config
-#/.config
+/.config/**
 
 ## dirs...
 #!/.config/sway/
