@@ -3,7 +3,16 @@
 /*
 
 !/.gitignore 
+
+##
+## .config directory 
+##
 !/.config/
 /.config/**
-!/.config/sway/
+
+## dirs...
+!/.config/sway/**
+
+## stand-alone files
 !/.config/user-dirs.dirs
+!/.config/user-dirs.locale
