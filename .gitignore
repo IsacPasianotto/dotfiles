@@ -1,0 +1,7 @@
+# Since this is a git repository placed in the /home/user directory, I've escluded
+# everything but the desidered files: 
+
+*
+
+!.gitignore 
+!.congig/ 
