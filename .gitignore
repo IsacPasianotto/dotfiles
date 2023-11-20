@@ -2,17 +2,21 @@
 # everything but the desidered files: 
 /*
 
+
 !/.gitignore 
 
-##
 ## .config directory 
 ##
-!/.config/
-/.config/**
+
+!/.config
+#/.config
 
 ## dirs...
-!/.config/sway/**
+#!/.config/sway/
+# /.config/sway/**
+
 
 ## stand-alone files
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
+!/.config/deleteme
