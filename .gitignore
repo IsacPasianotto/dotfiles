@@ -13,6 +13,7 @@
 # files in $HOME directory
 !/README.md
 !/.bash_profile
+!/.profile
 
 ## dirs...
 !/.config/sway/

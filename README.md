@@ -45,6 +45,8 @@ sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.m
     ```bash 
     # utilities ...
 
+    sudo dnf install -y libnotify
+
     sudo dnf install -y alacrity 
     
     sudo dnf install -y telegram
