@@ -107,27 +107,27 @@ input * xkb_layout "it"
 #
 # Moving around:
 #
-    # Move your focus around
-    bindsym $mod+$left focus left
-    bindsym $mod+$down focus down
-    bindsym $mod+$up focus up
-    bindsym $mod+$right focus right
-    # Or use $mod+[up|down|left|right]
-    bindsym $mod+Left focus left
-    bindsym $mod+Down focus down
-    bindsym $mod+Up focus up
-    bindsym $mod+Right focus right
+    # Move your focus around [h|j|k|l]
+    # bindsym $mod+$left  focus left
+    # bindsym $mod+$down  focus down
+    # bindsym $mod+$up    focus up
+    # bindsym $mod+$right focus right
+    # Move your focus around [up|down|left|right]
+    bindsym $mod+Left   focus left
+    bindsym $mod+Down   focus down
+    bindsym $mod+Up     focus up
+    bindsym $mod+Right   focus right
 
-    # Move the focused window with the same, but add Shift
-    bindsym $mod+Shift+$left move left
-    bindsym $mod+Shift+$down move down
-    bindsym $mod+Shift+$up move up
-    bindsym $mod+Shift+$right move right
-    # Ditto, with arrow keys
-    bindsym $mod+Shift+Left move left
-    bindsym $mod+Shift+Down move down
-    bindsym $mod+Shift+Up move up
-    bindsym $mod+Shift+Right move right
+    # Move the focused window [h|j|k|l]
+    # bindsym $mod+Shift+$left  move left
+    # bindsym $mod+Shift+$down  move down
+    # bindsym $mod+Shift+$up    move up
+    # bindsym $mod+Shift+$right move right
+    # Move the focused window [up|down|left|right]
+    bindsym $mod+Shift+Left   move left
+    bindsym $mod+Shift+Down   move down
+    bindsym $mod+Shift+Up     move up
+    bindsym $mod+Shift+Right   move right
 #
 # Workspaces:
 #
@@ -154,14 +154,15 @@ input * xkb_layout "it"
     bindsym $mod+Shift+9 move container to workspace number 9
     bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
-    # We just use 1-10 as the default.
+
 #
 # Layout stuff:
 #
     # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
+    # $mod+v or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
+    # remark: default in i3/sway for splith is mod+b
+    bindsym $mod+h splith
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
@@ -219,6 +220,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+#
+# Common programs:
+#
+bindsym $mod+b exec $browser
+bindsym $mod+t exec $filemanager
+
 # .............end of Key Binding ...........................................................
 
 
@@ -249,3 +256,11 @@ bindsym $mod+r mode "resize"
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
 # ................................................................................................
+
+
+# ...................... other behaviours ................................................
+
+focus_follows_mouse no
+
+# .........................................................................................
+
