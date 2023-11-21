@@ -10,12 +10,16 @@
 !/.config
 /.config/**
 
+# files in $HOME directory
+!/README.md
+
 ## dirs...
 !/.config/sway/
 !/.config/sway/**
 !/.config/waybar/
 !/.config/waybar/**
-
+!/.config/alacritty/
+!/.config/alacritty/**
 ## stand-alone files
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
