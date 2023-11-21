@@ -225,6 +225,10 @@ bindsym $mod+r mode "resize"
 #
 bindsym $mod+b exec $browser
 bindsym $mod+t exec $filemanager
+# remember: to make wlogout work, you have to add the line 
+# 	HandlePowerKey=ignore
+# to the file : /etc/systemd/login.conf
+bindsym XF86PowerOff exec wlogout
 
 # .............end of Key Binding ...........................................................
 
