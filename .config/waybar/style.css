@@ -1,12 +1,22 @@
+@define-color background1 #1d2021;
+@define-color foreground1 #ebdbb2;
+@define-color dim         #928374;
+@define-color yellow      #fabd2f;
+@define-color red         #fb4934;
+@define-color yellow      #b8bb26;
+@define-color white       #ffffff;
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "HackNerdFont", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
 }
 
+
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    /*background-color: rgba(43, 48, 59, 0.5); */
+    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    background-color: @background1;
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -16,21 +26,12 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
 window#waybar.termite {
     background-color: #3F3F3F;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
+    background-color: @white;
     border: none;
 }
 
@@ -45,7 +46,7 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px @foreground1;
 }
 
 #workspaces button {
@@ -278,3 +279,5 @@ label:focus {
 #scratchpad.empty {
 	background-color: transparent;
 }
+
+
