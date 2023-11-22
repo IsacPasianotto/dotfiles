@@ -44,7 +44,7 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     ```bash 
     # utilities ...
 
-    sudo dnf install -y libnotify wlogout
+    sudo dnf install -y libnotify wlogout jetbrains-mono-fonts-all
 
     # programs  ... 
 
