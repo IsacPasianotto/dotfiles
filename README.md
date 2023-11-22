@@ -38,6 +38,23 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     cd 
     rm -r $HOME/Downloads/fonts
     ```
+- Install `fish` and configure it with [tide](https://github.com/IlanCosman/tide): 
+    ```
+    sudo dnf install -y fish 
+
+    # into a fish shell: 
+    # install fisher, the plugin-manager needed to install tide:
+    curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
+    # install tide
+    fisher install IlanCosman/tide@v6
+    tide configure
+    ```
+
+- Install the [vim-plug](https://github.com/junegunn/vim-plug) plugin manager:
+    ```bash
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ```
 
 - Some packages that you will probably want to install (note, this list of package name is for fedora): 
     
@@ -48,5 +65,5 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
 
     # programs  ... 
 
-    sudo dnf install -y alacrity telegram 
+    sudo dnf install -y alacrity telegram htop neovim 
     ```

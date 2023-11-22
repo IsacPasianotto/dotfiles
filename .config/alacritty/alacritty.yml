@@ -245,8 +245,8 @@ cursor:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/bash
-  # program: /bin/fish
+  # program: /bin/bash
+  program: /bin/fish
   # program: /bin/zsh
 #  args:
 #    - --login
