@@ -61,9 +61,11 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     ```bash 
     # utilities ...
 
-    sudo dnf install -y libnotify wlogout jetbrains-mono-fonts-all
+    sudo dnf install -y libnotify wlogout jetbrains-mono-fonts-all bat \
+        adwaita-blue-gtk-theme xfce4-settings
 
     # programs  ... 
 
-    sudo dnf install -y alacrity telegram htop neovim 
+    sudo dnf install -y alacrity telegram htop gnome-calendar \
+        qt5ct lxappearanc qt5-qtstylepluginse chromium
     ```
