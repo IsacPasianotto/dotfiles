@@ -55,6 +55,7 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ```
+- Configure your login manager to autologin, for example for sddm see [there](https://wiki.archlinux.org/title/SDDM#Configuration).
 
 - Some packages that you will probably want to install (note, this list of package name is for fedora): 
     
@@ -62,10 +63,10 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     # utilities ...
 
     sudo dnf install -y libnotify wlogout jetbrains-mono-fonts-all bat \
-        adwaita-blue-gtk-theme xfce4-settings
+       
 
     # programs  ... 
 
-    sudo dnf install -y alacrity telegram htop gnome-calendar \
-        qt5ct lxappearanc qt5-qtstylepluginse chromium
+    sudo dnf install -y alacritty telegram htop gnome-calendar \
+        qt5ct lxappearance qt5-qtstyleplugins chromium
     ```
