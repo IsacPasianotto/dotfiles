@@ -15,7 +15,8 @@ set $right l
 #set $term foot
 set $term alacritty
 set $filemanager thunar
-set $browser firefox
+# set $browser firefox
+set $browser chromium-browser
 set $wallpaper /usr/share/backgrounds/default.png
 # ...................................................................................
 
