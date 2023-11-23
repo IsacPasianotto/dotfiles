@@ -15,6 +15,7 @@
 !/.bash_profile
 !/.profile
 !/.vimrc
+!/.gtkrc-2.0
 
 ## dirs...
 !/.config/sway/
@@ -24,8 +25,8 @@
 !/.config/alacritty/
 !/.config/alacritty/**
 
-# !/.config/gtk-3.0/
-# !/.config/gtk-3.0/**
+!/.config/gtk-3.0/
+!/.config/gtk-3.0/**
 
 ## stand-alone files
 !/.config/user-dirs.dirs

@@ -143,6 +143,11 @@ input * xkb_layout "it"
     bindsym $mod+9 workspace number 9
     bindsym $mod+0 workspace number 10
     bindsym $mod+u [urgent=latest] focus
+    bindsym $mod+Control+Left   workspace prev
+    bindsym $mod+Control+Right  workspace next
+    bindsym $mod+Control+$left  workspace prev
+    bindsym $mod+Control+$right workspace next
+
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
