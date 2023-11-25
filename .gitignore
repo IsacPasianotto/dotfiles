@@ -29,6 +29,9 @@
 !/.config/gtk-3.0/**
 /.config/gtk-3.0/bookmarks
 
+!/.config/foot/
+!/.config/foot/**
+
 ## stand-alone files
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
