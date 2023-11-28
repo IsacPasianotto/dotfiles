@@ -51,6 +51,22 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     tide configure
     ```
 
+- install and configure also zsh: 
+
+    ```
+    sudo dnf install -y zsh
+    
+    # install oh-my-zsh 
+
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    # install powerlevel10k
+
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+
+    # remember to set Set ZSH_THEME="powerlevel10k/powerlevel10k" in ~/.zshrc.
+    exec zsh 
+    ```
 - Install the [vim-plug](https://github.com/junegunn/vim-plug) plugin manager:
     ```bash
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
