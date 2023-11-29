@@ -13,6 +13,7 @@
 :set clipboard=unnamedplus  
 :set encoding=UTF-8
 :set termguicolors
+:set encoding=UTF-8
 
 call plug#begin()
 
@@ -36,7 +37,6 @@ nnoremap <C-n> :NERDTree<CR>
 nnoremap <F8> :TlistToggle<CR>
 nnoremap <C-i> :TagbarToggle<CR>
 
-set encoding=UTF-8
 "  Needed only if nerd font is not installed
 " let g:NERDTreeDirArrowExpandable="+"
 " let g:NERDTreeDirArrowCollapsible="~"

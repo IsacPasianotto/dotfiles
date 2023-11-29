@@ -12,8 +12,8 @@ set $down j
 set $up k
 set $right l
 # applications
-# set $term foot
-set $term alacritty
+set $term foot
+# set $term alacritty
 set $filemanager thunar
 set $browser firefox
 # set $browser chromium-browser
