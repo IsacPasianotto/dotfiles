@@ -89,3 +89,8 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
         qt5ct lxappearance qt5-qtstyleplugins chromium okular \
         libreoffice
     ```
+
+
+# Notes
+
+For what regards the `nvim` configuration, for some reason the git is broken. pleae intstall with the indications of [NvChad](https://nvchad.com/docs/quickstart/install)
