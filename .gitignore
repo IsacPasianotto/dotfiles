@@ -26,6 +26,8 @@
 !/.config/alacritty/**
 !/.config/wlogout/
 !/.config/wlogout/**
+!/.config/nvim/
+!/.config/nvim/**
 
 !/.config/gtk-3.0/
 !/.config/gtk-3.0/**
