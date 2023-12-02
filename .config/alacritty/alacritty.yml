@@ -110,8 +110,9 @@ font:
   normal:
     # Default:
     #   - (Linux/BSD) monospace
-    family: JetBrains Mono
+    # family: JetBrains Mono
     # family: Hack Nerd Font Mono
+    family: Hack Nerd Font # The mono variation makes nvim not works properly
 
     # The `style` can be specified to pick a specific face.
     style: Regular
