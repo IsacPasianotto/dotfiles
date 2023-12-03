@@ -262,11 +262,16 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
-
   -- added by me... trying to make quarto work 
-  -- {
-  --   "quarto-dev/quarto-nvim",
-  -- }
+  {
+    -- more package following the wiki
+    "quarto-dev/quarto-nvim",
+    'jmbuhr/otter.nvim',
+    'hrsh7th/nvim-cmp',
+    'neovim/nvim-lspconfig',
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+  },
   {
     "github/copilot.vim",
     lazy = false,
