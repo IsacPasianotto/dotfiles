@@ -101,3 +101,13 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     then start nvim and invoke the command `:Copilot setup`
 
 
+- Enable the multimedia codecs (some of those are non-free):
+
+    ```
+    sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+
+    sudo dnf install lame\* --exclude=lame-devel
+
+    sudo dnf group upgrade --with-optional Multimedia
+
+    ```
