@@ -80,7 +80,7 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     # utilities ...
 
     sudo dnf install -y libnotify wlogout jetbrains-mono-fonts-all bat \
-        adwaita-gtk2-theme adw-gtk3-theme
+        adwaita-gtk2-theme adw-gtk3-theme nodejs
        
 
     # programs  ... 
@@ -91,6 +91,13 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     ```
 
 
-# Notes
+- enable `copilot` inside `nvim` read the instruction [there](https://github.com/github/copilot.vim)
 
-For what regards the `nvim` configuration, for some reason the git is broken. pleae intstall with the indications of [NvChad](https://nvchad.com/docs/quickstart/install)
+    ```
+    git clone https://github.com/github/copilot.vim.git \
+        ~/.config/nvim/pack/github/start/copilot.vim
+    ```
+
+    then start nvim and invoke the command `:Copilot setup`
+
+

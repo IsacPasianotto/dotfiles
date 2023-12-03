@@ -262,6 +262,18 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
+
+  -- added by me... trying to make quarto work 
+  -- {
+  --   "quarto-dev/quarto-nvim",
+  -- }
+  {
+    "github/copilot.vim",
+    lazy = false,
+    config = function ()
+      vim.g.copilot_assume_mapped=true
+    end,
+  },
 }
 
 local config = require("core.utils").load_config()
