@@ -279,6 +279,14 @@ local default_plugins = {
       vim.g.copilot_assume_mapped=true
     end,
   },
+  {
+    --  see https://github.com/iamcco/markdown-preview.nvim 
+    --  for more detail and setting
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  }
 }
 
 local config = require("core.utils").load_config()
