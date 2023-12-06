@@ -18,6 +18,7 @@
 !/.gtkrc-2.0
 !/.zshrc
 !/.bashrc
+!/.tmux.conf
 
 ## dirs...
 !/.config/sway/
