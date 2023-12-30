@@ -87,7 +87,7 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
 
     sudo dnf install -y alacritty telegram htop gnome-calendar \
         qt5ct lxappearance qt5-qtstyleplugins chromium okular \
-        libreoffice wdisplays
+        libreoffice wdisplays mupdf
     ```
 
 
