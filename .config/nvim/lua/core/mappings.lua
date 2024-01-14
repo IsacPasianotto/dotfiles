@@ -43,7 +43,14 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
 
     -- new buffer
-    ["<leader>b"] = { "<cmd> enew <CR>", "New buffer" },
+    ["<leader>bN"] = { "<cmd> enew <CR>", "New buffer" },
+    ["<leader>bS"] = { "<cmd> split <CR>", "Split buffer" },
+    ["<leader>bv"] = { "<cmd> vsplit <CR>", "Vsplit buffer" },
+    ["<leader>bh"] = { "<cmd> split <CR>", "Hsplit buffer" },
+    ["<leader>bp"] = { "<cmd> bprevious <CR>", "Previous buffer" },
+    ["<leader>bn"] = { "<cmd> bnext <CR>", "Next buffer" },
+    ["<leader>bl"] = { "<cmd> blast <CR>", "Last buffer" },
+    ["<leader>bd"] = { "<cmd> bdelete <CR>", "Delete buffer" },
     ["<leader>ch"] = { "<cmd> NvCheatsheet <CR>", "Mapping cheatsheet" },
 
     ["<leader>fm"] = {
@@ -94,12 +101,12 @@ M.tabufline = {
     },
 
     -- close buffer + hide terminal buffer
-    ["<leader>x"] = {
-      function()
-        require("nvchad.tabufline").close_buffer()
-      end,
-      "Close buffer",
-    },
+    -- ["<leader>x"] = {
+    --   function()
+    --     require("nvchad.tabufline").close_buffer()
+    --   end,
+    --   "Close buffer",
+    -- },
   },
 }
 
@@ -261,7 +268,7 @@ M.nvimtree = {
     ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
     -- focus
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    -- ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 
@@ -296,7 +303,11 @@ M.nvterm = {
   plugin = true,
 
   t = {
+
     -- toggle in terminal mode
+    
+    -- default: leaved there because they dont cause any issue 
+    --------------------------------  
     ["<A-i>"] = {
       function()
         require("nvterm.terminal").toggle "float"
@@ -317,10 +328,35 @@ M.nvterm = {
       end,
       "Toggle vertical term",
     },
+    -- -------------------------------- 
+    ["<A-,>"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },
+
+    ["<A-->"] = {
+      function()
+        require("nvterm.terminal").toggle "horizontal"
+      end,
+      "Toggle horizontal term",
+    },
+
+    ["<A-.>"] = {
+      function()
+        require("nvterm.terminal").toggle "vertical"
+      end,
+      "Toggle vertical term",
+    },
+
   },
 
   n = {
     -- toggle in normal mode
+    
+    --------------------------------
+    --default leaved there because they do not cause any issue 
     ["<A-i>"] = {
       function()
         require("nvterm.terminal").toggle "float"
@@ -341,16 +377,21 @@ M.nvterm = {
       end,
       "Toggle vertical term",
     },
-
-    -- new
-    ["<leader>h"] = {
+    ----------------------------------
+    ["<leader>tf"] = {
+      function()
+        require("nvterm.terminal").toggle "float"
+      end,
+      "Toggle floating term",
+    },   -- new
+    ["<leader>tt"] = {
       function()
         require("nvterm.terminal").new "horizontal"
       end,
       "New horizontal term",
     },
 
-    ["<leader>v"] = {
+    ["<leader>tv"] = {
       function()
         require("nvterm.terminal").new "vertical"
       end,
