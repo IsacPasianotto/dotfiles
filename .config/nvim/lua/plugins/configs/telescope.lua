@@ -58,6 +58,16 @@ local options = {
       case_mode = "smart_case",
     },
   },
+  -- remap to open in hsplit and vsplit 
+  mappings = {
+    i = {
+      ["<C-x>"] = false,
+      ["<C-h>"] = require("telescope.actions").select_horizontal,
+      ["<C-v>"] = require("telescope.actions").select_vertical,
+      -- go to parent dir
+      ["<C-p>"] = require("telescope.actions").move_selection_previous
+    },
+  },
 }
 
 return options
