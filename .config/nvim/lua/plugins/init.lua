@@ -311,6 +311,24 @@ local default_plugins = {
     lazi = true,
     cmd = { "DiffviewOpen", "DiffviewToggleFile", "DiffviewFocusFiles", "DiffviewRefresh" }
   },
+  {
+    "nvim-treesitter/nvim-treesitter"
+  },
+  {
+    "nvim-orgmode/orgmode",
+    ft = { "org" },
+    config = function()
+      require('orgmode').setup_ts_grammar()
+      require("orgmode").setup({
+        org_agenda_files = { "~/org/*" },
+        org_default_notes_file = "~/org/refile.org",
+        org_agenda_templates = {
+          t = { description = "Task", template = "* TODO %?\n  %U\n  %a" },
+          j = { description = "Journal", template = "* %U\n%?" },
+        },
+      })
+    end,
+  }
 }
 
 local config = require("core.utils").load_config()
@@ -320,4 +338,5 @@ if #config.plugins > 0 then
 end
 
 require("lazy").setup(default_plugins, config.lazy_nvim)
+
 
