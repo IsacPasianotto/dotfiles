@@ -116,6 +116,9 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.3.450/bin
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+export EDITOR='nvim'
+
 export PATH=$PATH:/home/pasianeight/.config/emacs/bin
 alias vim='nvim'
+
 

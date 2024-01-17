@@ -305,7 +305,12 @@ local default_plugins = {
         'RainbowDelimQuoted',
         'RainbowMultiDelim'
     }
-}
+  },
+  {
+    "sindrets/diffview.nvim",
+    lazi = true,
+    cmd = { "DiffviewOpen", "DiffviewToggleFile", "DiffviewFocusFiles", "DiffviewRefresh" }
+  },
 }
 
 local config = require("core.utils").load_config()

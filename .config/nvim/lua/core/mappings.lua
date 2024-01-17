@@ -356,6 +356,16 @@ M.nvterm = {
       "Toggle vertical term",
     },
 
+    -- Allow moving the focus with <C-w>: 
+    ["<C-w>h"] = { "<C-\\><C-N><C-w>h", "Move left" },
+    ["<C-w>l"] = { "<C-\\><C-N><C-w>l", "Move right" },
+    ["<C-w>j"] = { "<C-\\><C-N><C-w>j", "Move down" },
+    ["<C-w>k"] = { "<C-\\><C-N><C-w>k", "Move up" },
+    -- also with arrow keys
+    ["<C-w><Left>"] = { "<C-\\><C-N><C-w>h", "Move left" },
+    ["<C-w><Right>"] = { "<C-\\><C-N><C-w>l", "Move right" },
+    ["<C-w><Down>"] = { "<C-\\><C-N><C-w>j", "Move down" },
+    ["<C-w><Up>"] = { "<C-\\><C-N><C-w>k", "Move up" },
   },
 
   n = {
