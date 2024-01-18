@@ -114,6 +114,9 @@ source $ZSH/oh-my-zsh.sh
 
 # to make quarto works
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.3.450/bin
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/gradle/gradle-8.5/bin
+
+
 export QT_QPA_PLATFORMTHEME=qt5ct
 
 export EDITOR='nvim'
