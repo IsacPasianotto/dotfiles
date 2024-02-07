@@ -122,6 +122,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export EDITOR='nvim'
 
 export PATH=$PATH:/home/pasianeight/.config/emacs/bin
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/drawio
 alias vim='nvim'
-
 
