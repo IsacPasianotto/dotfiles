@@ -78,7 +78,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  kubectl
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -112,8 +115,8 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-# to make quarto works
-export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.3.450/bin
+# export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.3.450/bin
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.4.550/bin
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/gradle/gradle-8.5/bin
 
 
@@ -123,5 +126,8 @@ export EDITOR='nvim'
 
 export PATH=$PATH:/home/pasianeight/.config/emacs/bin
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/drawio
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/Clion/clion-2023.3.4/bin
+alias clion="clion.sh"
+
 alias vim='nvim'
 

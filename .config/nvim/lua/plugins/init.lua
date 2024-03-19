@@ -28,7 +28,6 @@ local default_plugins = {
       require("nvterm").setup(opts)
     end,
   },
-
   {
     "NvChad/nvim-colorizer.lua",
     init = function()
@@ -270,7 +269,7 @@ local default_plugins = {
     'hrsh7th/nvim-cmp',
     'neovim/nvim-lspconfig',
     'nvim-treesitter/nvim-treesitter',
-    lazy = false,
+    lazy = true,
   },
   {
     "github/copilot.vim",
@@ -327,6 +326,23 @@ local default_plugins = {
           j = { description = "Journal", template = "* %U\n%?" },
         },
       })
+    end,
+  },
+  -- quarto dependencies
+  {
+    'jmbuhr/otter.nvim',
+    'hrsh7th/nvim-cmp',
+    'neovim/nvim-lspconfig',
+    'nvim-treesitter/nvim-treesitter'
+  },
+  -- load the configs for quarto from ./configs/quarto.lua file
+  {
+    "quarto-dev/quarto-nvim",
+    dev = false,
+    lazy = true, -- Only load when quarto is call 
+
+    config = function()
+      require("quarto").setup()
     end,
   }
 }
