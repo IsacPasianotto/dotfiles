@@ -45,3 +45,20 @@ nnoremap <C-i> :TagbarToggle<CR>
 " Move up and down lines
 :nnoremap <A-Up> <Up>ddp<Up>
 :nnoremap <A-Down> ddp
+
+
+" toggle the terminal window
+nnoremap <C-t> :call TermToggle()<CR>
+vnoremap <C-t> <ESC>:call TermToggle()<CR>
+inoremap <C-t> <ESC>:call TermToggle()<CR>
+tnoremap <C-t> exit<CR>
+
+function! TermToggle()
+    if term_list() == []
+        terminal
+    else
+        for term in term_list()
+            call term_sendkeys(term, "exit\<cr>")
+        endfor
+    endif
+endfunction

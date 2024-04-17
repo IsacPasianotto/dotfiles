@@ -81,6 +81,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 plugins=(
   git
   kubectl
+  # conda-zsh-completions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -127,7 +128,9 @@ export EDITOR='nvim'
 export PATH=$PATH:/home/pasianeight/.config/emacs/bin
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/drawio
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/Clion/clion-2023.3.4/bin
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/bitwarden
 alias clion="clion.sh"
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/pycharm/pycharm-2024.1/bin
 
 alias vim='nvim'
 
