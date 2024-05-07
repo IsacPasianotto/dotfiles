@@ -80,7 +80,7 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     # utilities ...
 
     sudo dnf install -y libnotify wlogout jetbrains-mono-fonts-all bat \
-        adwaita-gtk2-theme adw-gtk3-theme nodejs
+        adwaita-gtk2-theme adw-gtk3-theme nodejs exa
        
 
     # programs  ... 
