@@ -4,6 +4,7 @@
 /*
 !/.gitignore 
 
+
 ## .config directory 
 ##
 
@@ -19,6 +20,9 @@
 !/.zshrc
 !/.bashrc
 !/.tmux.conf
+
+!.spacemacs
+
 
 ## dirs...
 !/.config/sway/
@@ -42,4 +46,6 @@
 ## stand-alone files
 !/.config/user-dirs.dirs
 !/.config/user-dirs.locale
+
+
 
