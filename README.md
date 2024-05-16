@@ -80,7 +80,7 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     # utilities ...
 
     sudo dnf install -y libnotify wlogout jetbrains-mono-fonts-all bat \
-        adwaita-gtk2-theme adw-gtk3-theme nodejs exa
+        adwaita-gtk2-theme adw-gtk3-theme nodejs exa cargo
        
 
     # programs  ... 
@@ -89,6 +89,9 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
         qt5ct lxappearance qt5-qtstyleplugins chromium okular \
         libreoffice wdisplays mupdf wofi libwacom kcm_wacomtablet \ 
         gcc-c++
+
+    # needed for emacs
+    cargo install --git https://github.com/latex-lsp/texlab
 
     ```
 
@@ -113,3 +116,13 @@ Assuming you have a fresh installation of fedora, some of the things you may wan
     sudo dnf group upgrade --with-optional Multimedia
 
     ```
+
+
+- Install spacemac
+
+    ```
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    ```
+    and then copy the `.spacemacs` file from this repository to your home directory to have all 
+    the differenrce from the default
+
