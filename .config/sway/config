@@ -278,4 +278,3 @@ include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "
 focus_follows_mouse no
 
 # .........................................................................................
-
