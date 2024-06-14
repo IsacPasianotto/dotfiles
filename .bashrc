@@ -39,3 +39,13 @@ alias vim='nvim'
 export EDITOR='nvim'
 alias clion="clion.sh"
 
+
+
+
+## KUBERNETES
+export KUBECONFIG=$HOME/.kube/config.yaml
+alias "k context"="kubectl config use-context"
+
+## VPN 
+alias "vpn-area"="sudo openfortivpn -c $HOME/.openfortivpn/AREA-config"
+alias "vpn-killall"="sudo killall openfortivpn"

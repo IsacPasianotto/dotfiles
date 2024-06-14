@@ -143,5 +143,10 @@ alias la='exa --icons -la --color=auto'
 alias ll='exa --icons -ll --color=auto'
 alias lt='exa --icons -lT --color=auto .'
 
+## KUBERNETES
+export KUBECONFIG=$HOME/.kube/config.yaml
+alias "k context"="kubectl config use-context"
 
-
+## VPN 
+alias "vpn-area"="sudo openfortivpn -c $HOME/.openfortivpn/AREA-config"
+alias "vpn-killall"="sudo killall openfortivpn"
