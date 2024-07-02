@@ -25,8 +25,7 @@ fi
 unset rc
 
 
-# export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.3.450/bin
-export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.4.550/bin
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.5.45/bin
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/gradle/gradle-8.5/bin
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/drawio
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/Clion/clion-2023.3.4/bin
