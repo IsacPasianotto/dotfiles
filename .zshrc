@@ -125,12 +125,16 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 
 export EDITOR='nvim'
 
+export PATH=$PATH:/home/pasianeight/.local/bin
+export PATH=$PATH:/home/pasianeight/Downloads/Programs/quarto/quarto-1.5.45/bin
 export PATH=$PATH:/home/pasianeight/.config/emacs/bin
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/drawio
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/Clion/clion-2023.3.4/bin
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/bitwarden
 alias clion="clion.sh"
 export PATH=$PATH:/home/pasianeight/Downloads/Programs/pycharm/pycharm-2024.1/bin
+
+export PATH=$PATH:/home/pasianeight/.cargo/bin
 
 alias vim='nvim'
 
@@ -150,3 +154,7 @@ alias "k context"="kubectl config use-context"
 ## VPN 
 alias "vpn-area"="sudo openfortivpn -c $HOME/.openfortivpn/AREA-config"
 alias "vpn-killall"="sudo killall openfortivpn"
+
+fortune | cowsay | lolcat 
+
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet

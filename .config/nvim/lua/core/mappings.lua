@@ -1,4 +1,3 @@
--- n, v, i, t = mode names
 
 local M = {}
 
@@ -25,6 +24,8 @@ M.general = {
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
+    -- add also space + f + s to be consistent with emacs
+    -- ["<leader>fs"] = { "<cmd> w <CR>", "Save file" },
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
@@ -289,6 +290,7 @@ M.telescope = {
     ["<leader>fg"] = { "<cmd> Telescope live_grep cwd=~ <CR>", "Live grep in current directory" },
 
 
+    -- commented because it was remapped to file save 
     ["<leader>fs"] = { "<cmd> Telescope spell_suggest <CR>", "Find spell suggestions"
     },
 
