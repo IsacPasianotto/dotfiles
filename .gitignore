@@ -1,0 +1,49 @@
+# Since this is a git repository placed in the /home/user directory, I've escluded
+# everything but the desidered files: 
+
+/*
+!/.gitignore 
+
+
+## .config directory 
+##
+
+!/.config
+/.config/**
+
+# files in $HOME directory
+!/README.md
+!/.bash_profile
+!/.profile
+!/.vimrc
+!/.gtkrc-2.0
+!/.zshrc
+!/.bashrc
+!/.tmux.conf
+
+!.spacemacs
+
+
+## dirs...
+!/.config/sway/
+!/.config/sway/**
+!/.config/waybar/
+!/.config/waybar/**
+!/.config/alacritty/
+!/.config/alacritty/**
+!/.config/wlogout/
+!/.config/wlogout/**
+!/.config/nvim/
+!/.config/nvim/**
+
+!/.config/gtk-3.0/
+!/.config/gtk-3.0/**
+/.config/gtk-3.0/bookmarks
+
+!/.config/foot/
+!/.config/foot/**
+
+## stand-alone files
+!/.config/user-dirs.dirs
+!/.config/user-dirs.locale
+
