@@ -17,6 +17,8 @@ set $term alacritty
 set $filemanager thunar
 set $browser firefox
 # set $browser chromium-browser
+set $pdfviewer okular
+set $editor emacs
 set $wallpaper /usr/share/backgrounds/default.png
 # ...................................................................................
 
@@ -77,11 +79,12 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 }
 
 
-input * xkb_layout "it"
-# input type:keyboard {
-#     xkb_layout us
-#     xkb_variant intl
-# }
+# input * xkb_layout "it"
+input type:keyboard {
+    xkb_layout us
+    xkb_variant altgr-intl
+    # xkb_variant intl
+}
 # ...........................................................................................
 
 
@@ -236,6 +239,9 @@ bindsym $mod+r mode "resize"
 #
 bindsym $mod+b exec $browser
 bindsym $mod+t exec $filemanager
+bindsym $mod+o exec $pdfviewer
+# bindsym $mod+Shift+Return exec $editor
+
 # remember: to make wlogout work, you have to add the line 
 #   [Login]
 # 	HandlePowerKey=ignore
