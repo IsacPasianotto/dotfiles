@@ -82,7 +82,8 @@ input "2:7:SynPS/2_Synaptics_TouchPad" {
 # input * xkb_layout "it"
 input type:keyboard {
     xkb_layout us
-    xkb_variant altgr-intl
+    xkb_variant altgr-weur
+    # xkb_variant altgr-intl
     # xkb_variant intl
 }
 # ...........................................................................................
