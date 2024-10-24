@@ -17,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -121,6 +121,10 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias "vpn-area"="sudo openfortivpn -c $HOME/.openfortivpn/AREA-config"
 alias "vpn-killall"="sudo killall openfortivpn"
+alias "vpn-casa"="sudo wg-quick up $HOME/.wireguard/thinkad-t490.conf"
+alias "vpn-casa-kill"="sudo wg-quick down $HOME/.wireguard/thinkad-t490.conf"
+
+
 
 export KUBECONFIG=$HOME/.kube/config.yaml
 
