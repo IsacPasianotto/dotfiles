@@ -27,6 +27,8 @@
 ## dirs...
 !/.config/sway/
 !/.config/sway/**
+!/.config/swaylock/
+!/.config/swaylock/**
 !/.config/waybar/
 !/.config/waybar/**
 !/.config/alacritty/
@@ -35,7 +37,6 @@
 !/.config/wlogout/**
 !/.config/nvim/
 !/.config/nvim/**
-
 !/.config/gtk-3.0/
 !/.config/gtk-3.0/**
 /.config/gtk-3.0/bookmarks
