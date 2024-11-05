@@ -19,7 +19,8 @@ set $browser firefox
 # set $browser chromium-browser
 set $pdfviewer okular
 set $editor emacs
-set $wallpaper /usr/share/backgrounds/default.png
+# set $wallpaper /usr/share/backgrounds/default.png
+set $wallpaper $HOME/.config/sway/wallpaper.png
 # ...................................................................................
 
 
