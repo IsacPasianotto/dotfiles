@@ -1,4 +1,3 @@
-import = ["/home/pasianeight/.config/alacritty/themes/alabaster_dark.toml"]
 # import = ["/home/pasianeight/.config/alacritty/themes/alabaster.toml"]
 
 [colors]
@@ -118,7 +117,7 @@ mods = "Shift"
 [scrolling]
 history = 5000
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 
 [window]
@@ -132,3 +131,8 @@ instance = "Alacritty"
 [window.padding]
 x = 0
 y = 2
+
+[general]
+import = ["/home/pasianeight/.config/alacritty/themes/alabaster_dark.toml"]
+
+[terminal]

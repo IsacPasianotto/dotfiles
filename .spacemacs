@@ -32,7 +32,9 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(asciidoc
+   '(toml
+     html
+     asciidoc
      ruby
      yaml
      csv
@@ -47,6 +49,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
+     ;; ivy
      lsp
      markdown
      latex
