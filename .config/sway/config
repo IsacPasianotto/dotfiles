@@ -19,6 +19,7 @@ set $browser firefox
 # set $browser chromium-browser
 set $pdfviewer okular
 set $editor emacs
+set $emacsclientcmd "emacsclient -c -a ''"
 # set $wallpaper /usr/share/backgrounds/default.png
 set $wallpaper $HOME/.config/sway/wallpaper.png
 # ...................................................................................
@@ -244,6 +245,8 @@ bindsym $mod+b exec $browser
 bindsym $mod+t exec $filemanager
 bindsym $mod+o exec $pdfviewer
 # bindsym $mod+Shift+Return exec $editor
+bindsym $mod+Shift+Return exec $emacsclientcmd
+
 
 # remember: to make wlogout work, you have to add the line 
 #   [Login]

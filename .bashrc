@@ -27,7 +27,9 @@ unset rc
 
 
 alias "vpn-area"="sudo openfortivpn -c $HOME/.openfortivpn/AREA-config"
-alias "vpn-killall"="sudo killall openfortivpn"
+alias "vpn-area-kill"="sudo killall openfortivpn"
+alias "vpn-casa"="sudo wg-quick up $HOME/.wireguard/thinkad-t490.conf"
+alias "vpn-casa-kill"="sudo wg-quick down $HOME/.wireguard/thinkad-t490.conf"
 
 export KUBECONFIG=$HOME/.kube/config.yaml
 
