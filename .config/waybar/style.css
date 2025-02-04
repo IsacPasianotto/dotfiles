@@ -2,7 +2,7 @@
  * Keyframes
  * -------------------------------------------------------------------------- */
 
-@keyframes blink-warning {
+ @keyframes blink-warning {
     70% {
         color: white;
     }
@@ -54,6 +54,7 @@
 #memory,
 #mode,
 #network,
+#power-profiles-daemon,
 #pulseaudio,
 #temperature,
 #tray {
