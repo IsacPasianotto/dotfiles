@@ -67,6 +67,7 @@ This function should only modify configuration layer settings."
      shell-scripts
      ;; themes-megapack
      github-copilot
+     javascript
      )
 
 
@@ -79,8 +80,10 @@ This function should only modify configuration layer settings."
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
-                                      copilot)
-
+                                      copilot
+                                      ;; org-re-reveal
+                                      ox-reveal
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
@@ -603,19 +606,10 @@ This function is called only while dumping Spacemacs configuration. You can
 dump."
   )
 
-
-(defun dotspacemacs/user-config ()
-  "Configuration for user code:
-This function is called at the very end of Spacemacs startup, after layer
-configuration.
-Put your configuration code here, except for variables that should be set
-before packages are loaded."
-  )
-
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Custom settings I personally added:
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 
 ;; LaTeX:
 (setq-default dotspacemacs-configuration-layers
@@ -648,28 +642,37 @@ dotspacemacs-configuration-layers '(
               '((yaml :variables yaml-enable-lsp t)))
 
 (defun dotspacemacs/user-config ()
-  ;; other user-config settings
+  "Configuration for user code:
+   This function is called at the very end of Spacemacs startup, after layer
+   configuration.
+   Put your configuration code here, except for variables that should be set
+   before packages are loaded."
+
+
+  ;; Configurazione per ox-reveal
+  (use-package ox-reveal
+    :ensure t
+    :config
+    (setq org-reveal-root "https://cdn.jsdelivr.net/npm/reveal.js")
+    (setq org-reveal-mathjax t))
 
   ;; Enable indent-guide-mode for YAML
-  (add-hook 'yaml-mode-hook 'indent-guide-mode))
+  (add-hook 'yaml-mode-hook 'indent-guide-mode)
 
-(defun dotspacemacs/user-config ()
-  ;; other user-config settings
 
   ;; Enable indent-guide-mode for YAML
   (add-hook 'yaml-mode-hook 'indent-guide-mode)
   ;; Customize the appearance
   (setq indent-guide-char "|")  ;; Change the character to "|"
-  )
 
-;; Python
-
-(defun dotspacemacs/user-config ()
+  ;; PYTHON
   ;; Enable indent-guide-mode for Python
   (add-hook 'python-mode-hook 'indent-guide-mode)
   ;; Customize the appearance
   (setq indent-guide-char "|")  ;; Change the character to "|"
+
   )
+
 
 
 ;; COPILOT
@@ -692,3 +695,22 @@ dotspacemacs-configuration-layers '(
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(defun dotspacemacs/emacs-custom-settings ()
+  "Emacs custom settings.
+This is an auto-generated function, do not modify its content directly, use
+Emacs customize menu instead.
+This function is called at the very end of Spacemacs initialization."
+  (custom-set-variables
+   ;; custom-set-variables was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   '(package-selected-packages
+     '(js-doc js2-refactor multiple-cursors json-mode json-navigator json-reformat json-snatcher livid-mode nodejs-repl npm-mode skewer-mode js2-mode org-re-reveal-ref org-re-reveal dap-mode lsp-docker bui yasnippet-snippets yaml-mode ws-butler writeroom-mode winum which-key wgrep web-mode web-beautify vundo volatile-highlights vim-powerline vi-tilde-fringe unfill undo-fu-session undo-fu treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toml-mode toc-org terminal-here term-cursor tagedit symon symbol-overlay string-edit-at-point sphinx-doc spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline space-doc smeargle slim-mode shfmt shell-pop seeing-is-believing scss-mode sass-mode ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode restart-emacs rake rainbow-delimiters quickrun pytest pylookup pyenv-mode pydoc py-isort pug-mode prettier-js popwin poetry pippel pipenv pip-requirements password-generator paradox ox-reveal overseer orgit-forge org-superstar org-rich-yank org-ref org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nameless mwim multi-vterm multi-term multi-line minitest markdown-toc macrostep lsp-ui lsp-treemacs lsp-origami lorem-ipsum live-py-mode link-hint inspector insert-shebang info+ indent-guide importmagic impatient-mode hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-descbinds helm-css-scss helm-company helm-comint helm-c-yasnippet helm-bibtex helm-ag google-translate google-c-style golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md gendoxy flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-elsa flycheck-bashate flx-ido fish-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr emoji-cheat-sheet-plus emmet-mode elisp-slime-nav elisp-demos elisp-def eat dumb-jump dtrt-indent drag-stuff dotenv-mode disaster disable-mouse dired-quick-sort diminish diff-hl devdocs define-word cython-mode cpp-auto-include copilot company-web company-shell company-emoji company-c-headers column-enforce-mode code-review code-cells clean-aindent-mode centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile all-the-icons aggressive-indent ace-link ace-jump-helm-line)))
+  (custom-set-faces
+   ;; custom-set-faces was added by Custom.
+   ;; If you edit it by hand, you could mess it up, so be careful.
+   ;; Your init file should contain only one such instance.
+   ;; If there is more than one, they won't work right.
+   )
+  )
