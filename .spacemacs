@@ -32,25 +32,25 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(nginx
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
-     better-defaults
+     ;; better-defaults
      emacs-lisp
      git
      helm
-     lsp
+     ;; lsp
      markdown
      multiple-cursors
      org
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
+     ;; spell-checking
      syntax-checking
      version-control
      treemacs
@@ -68,6 +68,9 @@ This function should only modify configuration layer settings."
      ;; themes-megapack
      github-copilot
      javascript
+     docker
+     kubernetes
+     ipython-notebook
      )
 
 
@@ -611,35 +614,35 @@ dump."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 
-;; LaTeX:
+;; Set up all configuration layers properly
 (setq-default dotspacemacs-configuration-layers
-              '((latex :variables latex-backend 'lsp)))
-(setq-default dotspacemacs-configuration-layers
-              '((latex :variables latex-backend 'company-auctex)))
-(setq-default dotspacemacs-configuration-layers
-              '((latex :packages (not company-math))))
-(setq-default dotspacemacs-configuration-layers
-              '((latex :variables latex-refresh-preview t)))
-(setq-default dotspacemacs-configuration-layers
-              '((latex :variables latex-build-command "LaTeX")))
-(setq-default dotspacemacs-configuration-layers
-              '((latex :variables latex-build-engine 'xetex)))
-(setq-default dotspacemacs-configuration-layers
-              '((latex :variables latex-enable-auto-fill nil)))
+              '(
+                ;; LaTeX configuration
+                (latex :variables
+                       latex-backend 'lsp
+                       latex-refresh-preview t
+                       latex-build-command "LaTeX"
+                       latex-build-engine 'xetex
+                       latex-enable-auto-fill nil
+                       :packages (not company-math))
 
-;; CLANG
-(setq-default dotspacemacs-configuration-layers
-              '((c-c++ :variables c-c++-enable-clang-support t)))
+                ;; C/C++ configuration
+                (c-c++ :variables
+                       c-c++-enable-clang-support t)
 
-;; Markdown
-;; To use it run:
-;;    npm install -g vmd
-dotspacemacs-configuration-layers '(
-                                    (markdown :variables markdown-live-preview-engine 'vmd))
+                ;; Markdown configuration
+                ;; To use it run: npm install -g vmd
+                (markdown :variables
+                          markdown-live-preview-engine 'vmd)
 
-;; Yaml
-(setq-default dotspacemacs-configuration-layers
-              '((yaml :variables yaml-enable-lsp t)))
+                ;; YAML configuration
+                (yaml :variables
+                      yaml-enable-lsp t)
+                ))
+
+
+(remove-hook 'text-mode-hook 'flyspell-mode)
+(remove-hook 'prog-mode-hook 'flyspell-prog-mode)
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -647,6 +650,13 @@ dotspacemacs-configuration-layers '(
    configuration.
    Put your configuration code here, except for variables that should be set
    before packages are loaded."
+
+  ;; config per copilot
+  (use-package copilot
+    :ensure t
+    :hook (prog-mode . copilot-mode)
+    :config
+    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion))
 
 
   ;; Configurazione per ox-reveal
@@ -671,6 +681,21 @@ dotspacemacs-configuration-layers '(
   ;; Customize the appearance
   (setq indent-guide-char "|")  ;; Change the character to "|"
 
+  ;; Disabilita completamente flyspell
+  (with-eval-after-load 'flyspell
+    (global-flyspell-mode -1))
+
+  ;; Rimuovi flyspell da vari hook
+  (remove-hook 'text-mode-hook 'flyspell-mode)
+  (remove-hook 'prog-mode-hook 'flyspell-prog-mode)
+
+  ;; Disabilita la modalità spell-checking
+  (when (configuration-layer/package-used-p 'spell-checking)
+    (spell-checking-disable))
+
+  ;; Disabilita flyspell globalmente
+  (setq-default enable-flyspell-auto-completion nil)
+  (setq-default spell-checking-enable-by-default nil)
   )
 
 
@@ -706,7 +731,65 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
-     '(js-doc js2-refactor multiple-cursors json-mode json-navigator json-reformat json-snatcher livid-mode nodejs-repl npm-mode skewer-mode js2-mode org-re-reveal-ref org-re-reveal dap-mode lsp-docker bui yasnippet-snippets yaml-mode ws-butler writeroom-mode winum which-key wgrep web-mode web-beautify vundo volatile-highlights vim-powerline vi-tilde-fringe unfill undo-fu-session undo-fu treemacs-projectile treemacs-persp treemacs-magit treemacs-icons-dired treemacs-evil toml-mode toc-org terminal-here term-cursor tagedit symon symbol-overlay string-edit-at-point sphinx-doc spacemacs-whitespace-cleanup spacemacs-purpose-popwin spaceline space-doc smeargle slim-mode shfmt shell-pop seeing-is-believing scss-mode sass-mode ruby-tools ruby-test-mode ruby-refactor ruby-hash-syntax rubocopfmt rubocop rspec-mode restart-emacs rake rainbow-delimiters quickrun pytest pylookup pyenv-mode pydoc py-isort pug-mode prettier-js popwin poetry pippel pipenv pip-requirements password-generator paradox ox-reveal overseer orgit-forge org-superstar org-rich-yank org-ref org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink open-junk-file nameless mwim multi-vterm multi-term multi-line minitest markdown-toc macrostep lsp-ui lsp-treemacs lsp-origami lorem-ipsum live-py-mode link-hint inspector insert-shebang info+ indent-guide importmagic impatient-mode hybrid-mode hungry-delete holy-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-lsp helm-ls-git helm-git-grep helm-descbinds helm-css-scss helm-company helm-comint helm-c-yasnippet helm-bibtex helm-ag google-translate google-c-style golden-ratio gnuplot gitignore-templates git-timemachine git-modes git-messenger git-link gh-md gendoxy flyspell-correct-helm flycheck-pos-tip flycheck-package flycheck-elsa flycheck-bashate flx-ido fish-mode fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-evilified-state evil-escape evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emr emoji-cheat-sheet-plus emmet-mode elisp-slime-nav elisp-demos elisp-def eat dumb-jump dtrt-indent drag-stuff dotenv-mode disaster disable-mouse dired-quick-sort diminish diff-hl devdocs define-word cython-mode cpp-auto-include copilot company-web company-shell company-emoji company-c-headers column-enforce-mode code-review code-cells clean-aindent-mode centered-cursor-mode bundler browse-at-remote auto-yasnippet auto-highlight-symbol auto-compile all-the-icons aggressive-indent ace-link ace-jump-helm-line)))
+     '(ace-jump-helm-line ace-link aggressive-indent aio all-the-icons auto-compile
+                          auto-highlight-symbol auto-yasnippet browse-at-remote
+                          bui bundler centered-cursor-mode clean-aindent-mode
+                          code-cells code-review column-enforce-mode
+                          company-c-headers company-emoji company-shell
+                          company-web copilot cpp-auto-include cython-mode
+                          dap-mode define-word devdocs diff-hl diminish
+                          dired-quick-sort disable-mouse disaster docker
+                          dockerfile-mode dotenv-mode drag-stuff dtrt-indent
+                          dumb-jump eat elisp-def elisp-demos elisp-slime-nav
+                          emmet-mode emoji-cheat-sheet-plus emr esh-help
+                          eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu
+                          evil-args evil-cleverparens evil-collection
+                          evil-easymotion evil-escape evil-evilified-state
+                          evil-exchange evil-goggles evil-iedit-state
+                          evil-indent-plus evil-lion evil-lisp-state evil-matchit
+                          evil-mc evil-nerd-commenter evil-numbers evil-org
+                          evil-surround evil-textobj-line evil-tutor
+                          evil-unimpaired evil-visual-mark-mode evil-visualstar
+                          expand-region eyebrowse fancy-battery fish-mode flx-ido
+                          flycheck-bashate flycheck-elsa flycheck-package
+                          flycheck-pos-tip flyspell-correct-helm gendoxy gh-md
+                          git-link git-messenger git-modes git-timemachine
+                          gitignore-templates gnuplot golden-ratio google-c-style
+                          google-translate helm-ag helm-bibtex helm-c-yasnippet
+                          helm-comint helm-company helm-css-scss helm-descbinds
+                          helm-git-grep helm-ls-git helm-lsp helm-make
+                          helm-mode-manager helm-org helm-org-rifle
+                          helm-projectile helm-purpose helm-pydoc helm-swoop
+                          helm-themes helm-xref hide-comnt highlight-indentation
+                          highlight-numbers highlight-parentheses hl-todo
+                          holy-mode hungry-delete hybrid-mode impatient-mode
+                          importmagic indent-guide info+ insert-shebang inspector
+                          js-doc js2-mode js2-refactor json-mode json-navigator
+                          json-reformat json-snatcher link-hint live-py-mode
+                          livid-mode lorem-ipsum lsp-docker lsp-origami
+                          lsp-treemacs lsp-ui macrostep markdown-toc minitest
+                          multi-line multi-term multi-vterm multiple-cursors mwim
+                          nameless nginx-mode nodejs-repl npm-mode open-junk-file
+                          org-cliplink org-contrib org-download org-mime
+                          org-pomodoro org-present org-projectile org-re-reveal
+                          org-re-reveal-ref org-ref org-rich-yank org-superstar
+                          orgit-forge overseer ox-reveal paradox
+                          password-generator pip-requirements pipenv pippel poetry
+                          popwin prettier-js pug-mode py-isort pydoc pyenv-mode
+                          pylookup pytest quickrun rainbow-delimiters rake
+                          restart-emacs rspec-mode rubocop rubocopfmt
+                          ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools
+                          sass-mode scss-mode seeing-is-believing shell-pop shfmt
+                          skewer-mode slim-mode smeargle space-doc spaceline
+                          spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+                          sphinx-doc string-edit-at-point symbol-overlay symon
+                          tablist tagedit term-cursor terminal-here toc-org
+                          toml-mode treemacs-evil treemacs-icons-dired
+                          treemacs-magit treemacs-persp treemacs-projectile
+                          undo-fu undo-fu-session unfill vi-tilde-fringe
+                          vim-powerline volatile-highlights vundo web-beautify
+                          web-mode wgrep which-key winum writeroom-mode ws-butler
+                          yaml-mode yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
